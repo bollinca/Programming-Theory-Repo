@@ -13,6 +13,7 @@ public class InventoryController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //load inventory scene (and unload current scene)
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene(1);
