@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainLoader : MonoBehaviour
 {
+    GameObject inventory;
     // Start is called before the first frame update
     void Start()
     {
+        inventory = GameObject.Find("Inventory");
     }
 
     // Update is called once per frame
@@ -15,6 +17,7 @@ public class MainLoader : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            DontDestroyOnLoad(inventory);
             SceneManager.LoadScene(0);
         }
     }

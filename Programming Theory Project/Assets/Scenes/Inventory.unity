@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 151968229}
+  - component: {fileID: 151968230}
   m_Layer: 5
   m_Name: CreationButtons
   m_TagString: Untagged
@@ -159,6 +160,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -159}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &151968230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151968228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed5692b23e090843b786face4ff8dd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodPrefab: {fileID: 6549426501681734352, guid: bcb5e09316a0cfd4fa80dfa9c68a62a9, type: 3}
+  rockPrefab: {fileID: 800696100117205449, guid: 0f6dd4ea1a224cd43839f4c7684d1217, type: 3}
+  waterPrefab: {fileID: 219634443243435266, guid: 1b1fd722cbbc6034bb7477237dc53713, type: 3}
 --- !u!1 &181102201
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 343486064}
   m_Layer: 5
-  m_Name: Inventory
+  m_Name: InventoryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,7 +350,7 @@ GameObject:
   - component: {fileID: 554933583}
   - component: {fileID: 554933582}
   m_Layer: 5
-  m_Name: Create
+  m_Name: CreateText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -636,8 +652,8 @@ RectTransform:
   m_Children:
   - {fileID: 554933581}
   - {fileID: 1312809324}
-  - {fileID: 2094137389}
   - {fileID: 1198946504}
+  - {fileID: 2094137389}
   m_Father: {fileID: 151968229}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -795,7 +811,7 @@ RectTransform:
   m_Children:
   - {fileID: 2080099040}
   m_Father: {fileID: 814074118}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -845,7 +861,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1198946506}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 151968230}
+        m_TargetAssemblyTypeName: ItemGenerator, Assembly-CSharp
+        m_MethodName: CreateRock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1198946506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,7 +924,7 @@ GameObject:
   - component: {fileID: 1305943187}
   - component: {fileID: 1305943186}
   m_Layer: 5
-  m_Name: Water
+  m_Name: WaterTotal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1045,7 +1073,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1312809326}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 151968230}
+        m_TargetAssemblyTypeName: ItemGenerator, Assembly-CSharp
+        m_MethodName: CreateFood
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1312809326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1254,7 +1294,7 @@ GameObject:
   - component: {fileID: 1639187754}
   - component: {fileID: 1639187753}
   m_Layer: 5
-  m_Name: Rocks
+  m_Name: RocksTotal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1416,7 +1456,7 @@ GameObject:
   - component: {fileID: 1851964658}
   - component: {fileID: 1851964657}
   m_Layer: 5
-  m_Name: Food
+  m_Name: FoodTotal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1596,7 +1636,7 @@ RectTransform:
   m_Children:
   - {fileID: 1168105980}
   m_Father: {fileID: 814074118}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1646,7 +1686,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2094137391}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 151968230}
+        m_TargetAssemblyTypeName: ItemGenerator, Assembly-CSharp
+        m_MethodName: CreateWater
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2094137391
 MonoBehaviour:
   m_ObjectHideFlags: 0
