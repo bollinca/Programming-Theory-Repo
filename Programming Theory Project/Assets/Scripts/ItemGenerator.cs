@@ -16,40 +16,6 @@ public class ItemGenerator : MonoBehaviour
     {
         inventory = GameObject.Find("Inventory");
     }
-    // Add classes for items -- polymorphism.
-    class Item : MonoBehaviour
-    {
-        public int durability = 50;
-
-        virtual public void TakeDamage()
-        {
-            durability -= 25;
-        }
-    }
-
-    class Rock : Item
-    {
-        public override void TakeDamage()
-        {
-            durability -= 5;
-        }
-    }
-
-    class Water : Item
-    {
-        public override void TakeDamage()
-        {
-            durability -= 15;
-        }
-    }
-
-    class Food : Item
-    {
-        void Speak()
-        {
-            print("I am food.");
-        }
-    }
 
     public void CreateItem()
     {
