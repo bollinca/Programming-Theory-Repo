@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class StockTracker : MonoBehaviour
 {
-    int foodCount;
-    int waterCount;
-    int rockCount;
+    public GameObject[] foodStock;
+    public GameObject[] waterStock;
+    public GameObject[] rockStock;
 
     void Start()
     {
-        countItems();
+        CountItems();
     }
 
     void Update()
     {
         //Outputs current stock in console every frame
-        print("water: " + waterCount + " food: " + foodCount + " rock: " + rockCount);
-        countItems();
+        print("water: " + waterStock.Length + " food: " + foodStock.Length + " rock: " + rockStock.Length);
+        CountItems();
     }
 
-    void countItems()
+    void CountItems()
     {
         //counts current stock
-        waterCount = GameObject.FindGameObjectsWithTag("Water").Length;
-        foodCount = GameObject.FindGameObjectsWithTag("Food").Length;
-        rockCount = GameObject.FindGameObjectsWithTag("Rock").Length;
+        waterStock = GameObject.FindGameObjectsWithTag("Water");
+        foodStock = GameObject.FindGameObjectsWithTag("Food");
+        rockStock = GameObject.FindGameObjectsWithTag("Rock");
     }
 }

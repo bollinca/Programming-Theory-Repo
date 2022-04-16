@@ -7,6 +7,7 @@ public class InventoryController : MonoBehaviour
 
     GameObject boundaries;
     GameObject inventory;
+    GameObject stockTracker;
 
     void Start()
     {
@@ -15,6 +16,8 @@ public class InventoryController : MonoBehaviour
         boundaries = GameObject.Find("Boundaries");
         DontDestroyOnLoad(inventory);
         DontDestroyOnLoad(boundaries);
+        // link stocktracker for variable access;
+        stockTracker = GameObject.Find("StockTracker");
     }
 
     void Update()
@@ -24,5 +27,17 @@ public class InventoryController : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
+    }
+
+    public void ShakeInventory()
+    {
+        GameObject[] foodStock = stockTracker.GetComponent<StockTracker>().foodStock;
+        GameObject[] rockStock = stockTracker.GetComponent<StockTracker>().rockStock;
+        GameObject[] waterStock = stockTracker.GetComponent<StockTracker>().waterStock;
+    }
+
+    public void ClearInventory()
+    {
+        GameObject.FindGameObjectsWithTag("Item");
     }
 }
