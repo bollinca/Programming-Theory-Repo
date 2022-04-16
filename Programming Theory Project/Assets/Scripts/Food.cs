@@ -6,10 +6,10 @@ class Food : Item
 {
     private void Start()
     {
-        Speak();
+        TechnicallyAnEasterEgg();
     }
-    void Speak()
+    void TechnicallyAnEasterEgg()
     {
-        print("I am food.");
+        print("Oh hey you noticed this. Cool.");
     }
 }

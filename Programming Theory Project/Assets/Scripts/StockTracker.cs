@@ -1,17 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class StockTracker : MonoBehaviour
 {
     public GameObject[] foodStock;
     public GameObject[] waterStock;
     public GameObject[] rockStock;
-
-    void Start()
-    {
-        CountItems();
-    }
 
     void Update()
     {
