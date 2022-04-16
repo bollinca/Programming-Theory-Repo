@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6549426501681734358}
   - component: {fileID: 6549426501681734353}
   - component: {fileID: 6549426501681734357}
+  - component: {fileID: 6651035064287449895}
   m_Layer: 0
   m_Name: Food
   m_TagString: Food
@@ -113,3 +114,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 72
   m_CollisionDetection: 0
+--- !u!114 &6651035064287449895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6549426501681734352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1684ac32ac2d845b930173848feea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  durability: 50
+  foodPrefab: {fileID: 0}
