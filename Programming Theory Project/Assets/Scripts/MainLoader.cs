@@ -6,17 +6,17 @@ using UnityEngine.SceneManagement;
 public class MainLoader : MonoBehaviour
 {
     GameObject inventory;
-    // Start is called before the first frame update
+
     void Start()
     {
         inventory = GameObject.Find("Inventory");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            //ensure that inventory is not cleared on scene swap from inventory to gamescene
             DontDestroyOnLoad(inventory);
             SceneManager.LoadScene(0);
         }

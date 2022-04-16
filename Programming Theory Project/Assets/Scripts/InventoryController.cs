@@ -7,16 +7,16 @@ public class InventoryController : MonoBehaviour
 
     GameObject boundaries;
     GameObject inventory;
-    // Start is called before the first frame update
+
     void Start()
     {
+        // Ensure that inventory does not clear on scene swap from gamescene to inventory
         inventory = GameObject.Find("Inventory");
         boundaries = GameObject.Find("Boundaries");
         DontDestroyOnLoad(inventory);
         DontDestroyOnLoad(boundaries);
     }
 
-    // Update is called once per frame
     void Update()
     {
         //load inventory scene (and unload current scene)

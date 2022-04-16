@@ -5,28 +5,23 @@ using UnityEngine.EventSystems;
 
 public class ItemGenerator : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     public GameObject foodPrefab;
     public GameObject rockPrefab;
     public GameObject waterPrefab;
-    public string lastButton;
     GameObject inventory;
+    public string lastButton;
 
     void Start()
     {
         inventory = GameObject.Find("Inventory");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void CreateItem()
     {
+        //find name of button pressed
         lastButton = EventSystem.current.currentSelectedGameObject.name;
+        //run appropriate generation method
         switch (lastButton)
         {
             case "FoodGenerator":
@@ -39,16 +34,12 @@ public class ItemGenerator : MonoBehaviour
                 CreateRock();
                 break;
         }
-        // find button type
-        // run item creation method
-
     }
 
     void CreateWater()
     {
         Instantiate(waterPrefab, inventory.transform);
     }
-
     void CreateFood()
     {
         Instantiate(foodPrefab, inventory.transform);
