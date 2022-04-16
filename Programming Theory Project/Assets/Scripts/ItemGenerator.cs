@@ -17,7 +17,7 @@ public class ItemGenerator : MonoBehaviour
         inventory = GameObject.Find("Inventory");
     }
 
-    public void CreateItem()
+    public void CreateItem() //ABSTRACTION
     {
         //find name of button pressed
         lastButton = EventSystem.current.currentSelectedGameObject.name;

@@ -15,8 +15,7 @@ public class StockTracker : MonoBehaviour
 
     void Update()
     {
-        //Outputs current stock in console every frame
-        print("water: " + waterStock.Length + " food: " + foodStock.Length + " rock: " + rockStock.Length);
+        //Keeps item arrays up to date at all times;
         CountItems();
     }
 

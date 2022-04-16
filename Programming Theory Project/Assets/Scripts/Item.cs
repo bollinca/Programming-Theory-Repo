@@ -16,6 +16,6 @@ class Item : MonoBehaviour
 
     virtual public void TakeDamage() // POLYMORPHISM
     {
-        durability -= 25;
+        durability -= 10;
     }
 }

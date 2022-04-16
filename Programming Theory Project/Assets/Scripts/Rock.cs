@@ -6,6 +6,6 @@ class Rock : Item
 {
     public override void TakeDamage()
     {
-        durability -= 5;
+        durability -= 2;
     }
 }

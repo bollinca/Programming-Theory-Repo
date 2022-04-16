@@ -6,7 +6,7 @@ class Water : Item
 {
     public override void TakeDamage()
     {
-        durability -= 15;
+        durability -= 5;
     }
 }
 
