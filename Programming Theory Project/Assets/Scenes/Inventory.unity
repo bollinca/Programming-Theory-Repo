@@ -175,6 +175,7 @@ MonoBehaviour:
   foodPrefab: {fileID: 6549426501681734352, guid: bcb5e09316a0cfd4fa80dfa9c68a62a9, type: 3}
   rockPrefab: {fileID: 800696100117205449, guid: 0f6dd4ea1a224cd43839f4c7684d1217, type: 3}
   waterPrefab: {fileID: 219634443243435266, guid: 1b1fd722cbbc6034bb7477237dc53713, type: 3}
+  lastButton: 
 --- !u!1 &181102201
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +351,7 @@ GameObject:
   - component: {fileID: 554933583}
   - component: {fileID: 554933582}
   m_Layer: 5
-  m_Name: CreateText
+  m_Name: CreateLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -864,7 +865,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 151968230}
         m_TargetAssemblyTypeName: ItemGenerator, Assembly-CSharp
-        m_MethodName: CreateRock
+        m_MethodName: CreateItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1076,7 +1077,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 151968230}
         m_TargetAssemblyTypeName: ItemGenerator, Assembly-CSharp
-        m_MethodName: CreateFood
+        m_MethodName: CreateItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1689,7 +1690,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 151968230}
         m_TargetAssemblyTypeName: ItemGenerator, Assembly-CSharp
-        m_MethodName: CreateWater
+        m_MethodName: CreateItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

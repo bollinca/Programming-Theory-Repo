@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ItemGenerator : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ItemGenerator : MonoBehaviour
     public GameObject foodPrefab;
     public GameObject rockPrefab;
     public GameObject waterPrefab;
+    public string lastButton;
     GameObject inventory;
 
     void Start()
@@ -19,29 +21,39 @@ public class ItemGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void CreateItem()
     {
-        //if (button pressed)
+        lastButton = EventSystem.current.currentSelectedGameObject.name;
+        switch (lastButton)
+        {
+            case "FoodGenerator":
+                CreateFood();
+                break;
+            case "WaterGenerator":
+                CreateWater();
+                break;
+            case "RockGenerator":
+                CreateRock();
+                break;
+        }
         // find button type
-        // create item to match type
-        // add item to Inventory Game Object
+        // run item creation method
 
     }
 
-    public void CreateWater()
+    void CreateWater()
     {
         Instantiate(waterPrefab, inventory.transform);
     }
 
-    public void CreateFood()
+    void CreateFood()
     {
         Instantiate(foodPrefab, inventory.transform);
     }
-    
-    public void CreateRock()
+    void CreateRock()
     {
         Instantiate(rockPrefab, inventory.transform);
     }
