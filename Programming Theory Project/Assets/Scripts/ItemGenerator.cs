@@ -10,17 +10,17 @@ public class ItemGenerator : MonoBehaviour
     [SerializeField] private GameObject rockPrefab;
     [SerializeField] private GameObject waterPrefab;
     private GameObject inventory;
-    private DisplayUpdater displayUpdater;
+    private StockTracker stockTracker;
 
     private string lastButton;
 
-    void Start()
+    private void Start()
     {
         inventory = GameObject.Find("Inventory");
-        displayUpdater = GameObject.Find("DisplayUpdater").GetComponent<DisplayUpdater>();
+        stockTracker = GameObject.Find("StockTracker").GetComponent<StockTracker>();
     }
 
-    [SerializeField] void CreateItem() //ABSTRACTION
+    [SerializeField] void CreateItem() //ABSTRACTION && ENCAPSULATION
     {
         //find name of button pressed
         lastButton = EventSystem.current.currentSelectedGameObject.name;
@@ -37,7 +37,7 @@ public class ItemGenerator : MonoBehaviour
                 CreateRock();
                 break;
         }
-        displayUpdater.UpdateDisplay();
+        stockTracker.FullStockUpdate() ;
     }
 
     private void CreateWater()

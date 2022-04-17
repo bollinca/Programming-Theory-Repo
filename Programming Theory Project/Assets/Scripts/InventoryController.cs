@@ -7,8 +7,9 @@ public class InventoryController : MonoBehaviour
 
     private GameObject boundaries;
     private GameObject inventory;
-    private GameObject stockTracker;
-    
+    private GameObject stockTrackerContainer;
+    private StockTracker stockTracker;
+
     // Variables for randomizing shake
     private Vector3 randomizedShake;
     private int xRange;
@@ -22,8 +23,9 @@ public class InventoryController : MonoBehaviour
         boundaries = GameObject.Find("Boundaries");
         DontDestroyOnLoad(inventory);
         DontDestroyOnLoad(boundaries);
-        // link stocktracker for variable access;
-        stockTracker = GameObject.Find("StockTracker");
+        // link stocktracker object for variable access;
+        stockTrackerContainer = GameObject.Find("StockTracker");
+        stockTracker = stockTrackerContainer.GetComponent<StockTracker>();
     }
 
     void Update()
@@ -37,17 +39,16 @@ public class InventoryController : MonoBehaviour
 
     public void ShakeInventory()
     {
-        GameObject[] foodStock = stockTracker.GetComponent<StockTracker>().foodStock;
-        GameObject[] rockStock = stockTracker.GetComponent<StockTracker>().rockStock;
-        GameObject[] waterStock = stockTracker.GetComponent<StockTracker>().waterStock;
-
         xRange = Random.Range(-5, 5);
         yRange = Random.Range(-5, 5);
         zRange = Random.Range(-5, 5);
-        randomizedShake = new Vector3 (xRange, yRange, zRange);
+        randomizedShake = new Vector3(xRange, yRange, zRange);
 
+
+        // CountItems must be placed at front of loop. Putting it at the end introduces a bug (theory: count occurs before objects destroy themselves)
+        stockTracker.CountItems();
         // Loop through all food objects, "shake" and damage them
-        foreach (GameObject gameObjectFood in foodStock)
+        foreach (GameObject gameObjectFood in stockTracker.foodStock)
         {
             gameObjectFood.GetComponent<Rigidbody>().AddForce(randomizedShake, ForceMode.Impulse);
             //Access script
@@ -55,13 +56,13 @@ public class InventoryController : MonoBehaviour
             food.TakeDamage();
         }
         // See preceding two comments
-        foreach (GameObject gameObjectRock in rockStock)
+        foreach (GameObject gameObjectRock in stockTracker.rockStock)
         {
             gameObjectRock.GetComponent<Rigidbody>().AddForce(randomizedShake, ForceMode.Impulse);
             Rock rock = gameObjectRock.GetComponent<Rock>();
             rock.TakeDamage();
         }
-        foreach (GameObject gameObjectWater in waterStock)
+        foreach (GameObject gameObjectWater in stockTracker.waterStock)
         {
             gameObjectWater.GetComponent<Rigidbody>().AddForce(randomizedShake, ForceMode.Impulse);
             Water water = gameObjectWater.GetComponent<Water>();

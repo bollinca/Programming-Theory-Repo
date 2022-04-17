@@ -175,7 +175,6 @@ MonoBehaviour:
   foodPrefab: {fileID: 6549426501681734352, guid: bcb5e09316a0cfd4fa80dfa9c68a62a9, type: 3}
   rockPrefab: {fileID: 800696100117205449, guid: 0f6dd4ea1a224cd43839f4c7684d1217, type: 3}
   waterPrefab: {fileID: 219634443243435266, guid: 1b1fd722cbbc6034bb7477237dc53713, type: 3}
-  lastButton: 
 --- !u!1 &181102201
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +218,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &212205338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 212205339}
+  - component: {fileID: 212205340}
+  m_Layer: 0
+  m_Name: StockTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &212205339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212205338}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &212205340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212205338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0abbfad7930c590448b67167c0a50f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodStock: []
+  waterStock: []
+  rockStock: []
 --- !u!1 &343486063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,7 +1170,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312809323}
   m_CullTransparentMesh: 1
---- !u!1 &1430476456
+--- !u!1 &1461269252
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1133,44 +1178,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1430476458}
-  - component: {fileID: 1430476457}
+  - component: {fileID: 1461269254}
+  - component: {fileID: 1461269253}
   m_Layer: 0
-  m_Name: DisplayUpdater
+  m_Name: InventoryLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1430476457
+--- !u!114 &1461269253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430476456}
+  m_GameObject: {fileID: 1461269252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86d4fc4446476ac42bc5f2d798fe9979, type: 3}
+  m_Script: {fileID: 11500000, guid: b908718e2e223044497171a1f83df08d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stockTracker: {fileID: 0}
-  rockText: {fileID: 1639187753}
-  waterText: {fileID: 1305943186}
-  foodText: {fileID: 1851964657}
---- !u!4 &1430476458
+--- !u!4 &1461269254
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430476456}
+  m_GameObject: {fileID: 1461269252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 960, y: 94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1611010459
 GameObject:
