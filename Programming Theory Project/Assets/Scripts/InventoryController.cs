@@ -5,15 +5,15 @@ using UnityEngine.SceneManagement;
 public class InventoryController : MonoBehaviour
 {
 
-    GameObject boundaries;
-    GameObject inventory;
-    GameObject stockTracker;
-    public int a = 5;
-    public Vector3 randomizedShake;
-
-    public int xRange;
-    public int yRange;
-    public int zRange;
+    private GameObject boundaries;
+    private GameObject inventory;
+    private GameObject stockTracker;
+    
+    // Variables for randomizing shake
+    private Vector3 randomizedShake;
+    private int xRange;
+    private int yRange;
+    private int zRange;
 
     void Start()
     {
@@ -41,9 +41,9 @@ public class InventoryController : MonoBehaviour
         GameObject[] rockStock = stockTracker.GetComponent<StockTracker>().rockStock;
         GameObject[] waterStock = stockTracker.GetComponent<StockTracker>().waterStock;
 
-        int xRange = Random.Range(-5, 5);
-        int yRange = Random.Range(-5, 5);
-        int zRange = Random.Range(-5, 5);
+        xRange = Random.Range(-5, 5);
+        yRange = Random.Range(-5, 5);
+        zRange = Random.Range(-5, 5);
         randomizedShake = new Vector3 (xRange, yRange, zRange);
 
         // Loop through all food objects, "shake" and damage them

@@ -4,7 +4,7 @@ using UnityEngine;
 
 class Water : Item
 {
-    public override void TakeDamage()
+    [HideInInspector] public override void TakeDamage()
     {
         durability -= 5;
     }

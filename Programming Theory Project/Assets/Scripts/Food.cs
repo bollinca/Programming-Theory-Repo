@@ -8,7 +8,13 @@ class Food : Item
     {
         TechnicallyAnEasterEgg();
     }
-    void TechnicallyAnEasterEgg()
+
+    [HideInInspector] public override void TakeDamage()
+    {
+        base.TakeDamage();
+    }
+
+    private void TechnicallyAnEasterEgg()
     {
         print("Oh hey you noticed this. Cool.");
     }

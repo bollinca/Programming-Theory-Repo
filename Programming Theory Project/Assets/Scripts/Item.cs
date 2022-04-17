@@ -4,7 +4,7 @@ using UnityEngine;
 
 class Item : MonoBehaviour
 {
-    public int durability = 50;
+    protected int durability = 50; //ENCAPSULATION
 
     private void Update() // INHERITANCE
     {
@@ -14,7 +14,7 @@ class Item : MonoBehaviour
         }
     }
 
-    virtual public void TakeDamage() // POLYMORPHISM
+    [HideInInspector] virtual public void TakeDamage() // POLYMORPHISM
     {
         durability -= 10;
     }

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainLoader : MonoBehaviour
 {
-    GameObject inventory;
+    private GameObject inventory;
 
     void Start()
     {

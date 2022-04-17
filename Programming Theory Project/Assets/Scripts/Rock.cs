@@ -4,7 +4,7 @@ using UnityEngine;
 
 class Rock : Item
 {
-    public override void TakeDamage()
+    [HideInInspector] public override void TakeDamage()
     {
         durability -= 2;
     }

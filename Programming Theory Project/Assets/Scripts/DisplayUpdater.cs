@@ -21,10 +21,10 @@ public class DisplayUpdater : MonoBehaviour
     void Start()
     {
         stockTracker = GameObject.Find("StockTracker").GetComponent<StockTracker>();
-        updateDisplay();
+        UpdateDisplay();
     }
 
-    public void updateDisplay()
+    public void UpdateDisplay()
     {
         //keeps count up to date w/o running on update
         CountItems();

@@ -6,13 +6,13 @@ using UnityEngine.EventSystems;
 public class ItemGenerator : MonoBehaviour
 {
 
-    public GameObject foodPrefab;
-    public GameObject rockPrefab;
-    public GameObject waterPrefab;
-    GameObject inventory;
-    DisplayUpdater displayUpdater;
+    [SerializeField] private GameObject foodPrefab; // Encapsulation
+    [SerializeField] private GameObject rockPrefab;
+    [SerializeField] private GameObject waterPrefab;
+    private GameObject inventory;
+    private DisplayUpdater displayUpdater;
 
-    public string lastButton;
+    private string lastButton;
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class ItemGenerator : MonoBehaviour
         displayUpdater = GameObject.Find("DisplayUpdater").GetComponent<DisplayUpdater>();
     }
 
-    public void CreateItem() //ABSTRACTION
+    [SerializeField] void CreateItem() //ABSTRACTION
     {
         //find name of button pressed
         lastButton = EventSystem.current.currentSelectedGameObject.name;
@@ -37,18 +37,18 @@ public class ItemGenerator : MonoBehaviour
                 CreateRock();
                 break;
         }
-        displayUpdater.updateDisplay();
+        displayUpdater.UpdateDisplay();
     }
 
-    void CreateWater()
+    private void CreateWater()
     {
         Instantiate(waterPrefab, inventory.transform);
     }
-    void CreateFood()
+    private void CreateFood()
     {
         Instantiate(foodPrefab, inventory.transform);
     }
-    void CreateRock()
+    private void CreateRock()
     {
         Instantiate(rockPrefab, inventory.transform);
     }
