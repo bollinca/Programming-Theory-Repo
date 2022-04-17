@@ -5,17 +5,19 @@ using UnityEngine.UI;
 
 public class StockTracker : MonoBehaviour
 {
+
+    // For tracking prefabs and interacting with them
     public GameObject[] foodStock;
     public GameObject[] waterStock;
     public GameObject[] rockStock;
 
+    // For displaying the current item count
     private Text rockText;
     private Text waterText;
     private Text foodText;
 
-    public void FullStockUpdate()
+    public void FullStockUpdate() //ABSTRACTION
     {
-        //keeps count up to date w/o running on update
         AssignTextFields();
         CountItems();
         UpdateDisplay();

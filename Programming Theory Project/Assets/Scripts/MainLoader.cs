@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainLoader : MonoBehaviour
 {
+
+    // Used to prevent destruction on load
     private GameObject inventory;
     private GameObject stockTrackerContainer;
+    // Used for function access
     private StockTracker stockTracker;
 
     private void Start()

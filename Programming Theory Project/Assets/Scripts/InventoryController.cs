@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class InventoryController : MonoBehaviour
 {
-
+    // accessed to prevent destruction on load.
     private GameObject boundaries;
     private GameObject inventory;
+
+    //accessed for function use and item damage application
     private GameObject stockTrackerContainer;
     private StockTracker stockTracker;
 
-    // Variables for randomizing shake
+    // Variables for randomizing shake magnitude/direction
     private Vector3 randomizedShake;
     private int xRange;
     private int yRange;
@@ -48,7 +50,7 @@ public class InventoryController : MonoBehaviour
         randomizedShake = new Vector3(xRange, yRange, zRange);
 
 
-        // CountItems must be placed at front of loop. Putting it at the end introduces a bug (theory: count occurs before objects destroy themselves)
+        // CountItems must be placed before the loops. Putting it at the end introduces a bug where the count array remains bound to destroyed objects.
         stockTracker.CountItems();
         // Loop through all food objects, "shake" and damage them
         foreach (GameObject gameObjectFood in stockTracker.foodStock)
@@ -58,7 +60,6 @@ public class InventoryController : MonoBehaviour
             Food food = gameObjectFood.GetComponent<Food>();
             food.TakeDamage();
         }
-        // See preceding two comments
         foreach (GameObject gameObjectRock in stockTracker.rockStock)
         {
             gameObjectRock.GetComponent<Rigidbody>().AddForce(randomizedShake, ForceMode.Impulse);

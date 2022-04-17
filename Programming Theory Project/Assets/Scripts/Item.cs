@@ -4,6 +4,8 @@ using UnityEngine;
 
 class Item : MonoBehaviour
 {
+    // Damage done to items varies by item. Durability is always 50.
+
     protected int durability = 50; //ENCAPSULATION
 
     private void Update() // INHERITANCE
@@ -13,7 +15,6 @@ class Item : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     [HideInInspector] virtual public void TakeDamage() // POLYMORPHISM
     {
         durability -= 10;
