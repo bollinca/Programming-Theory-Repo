@@ -25,7 +25,10 @@ public class InventoryController : MonoBehaviour
         DontDestroyOnLoad(boundaries);
         // link stocktracker object for variable access;
         stockTrackerContainer = GameObject.Find("StockTracker");
-        stockTracker = stockTrackerContainer.GetComponent<StockTracker>();
+        if (stockTrackerContainer)
+        {
+            stockTracker = stockTrackerContainer.GetComponent<StockTracker>();
+        }
     }
 
     void Update()

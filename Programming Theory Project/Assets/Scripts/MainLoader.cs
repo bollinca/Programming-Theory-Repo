@@ -17,7 +17,7 @@ public class MainLoader : MonoBehaviour
         stockTracker.CountItems();
     }
 
-   private  void Update()
+   private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
