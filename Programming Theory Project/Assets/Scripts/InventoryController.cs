@@ -68,9 +68,4 @@ public class InventoryController : MonoBehaviour
             water.TakeDamage();
         }
     }
-
-    public void ClearInventory()
-    {
-        GameObject.FindGameObjectsWithTag("Item");
-    }
 }

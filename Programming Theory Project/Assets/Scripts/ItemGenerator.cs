@@ -10,11 +10,14 @@ public class ItemGenerator : MonoBehaviour
     public GameObject rockPrefab;
     public GameObject waterPrefab;
     GameObject inventory;
+    DisplayUpdater displayUpdater;
+
     public string lastButton;
 
     void Start()
     {
         inventory = GameObject.Find("Inventory");
+        displayUpdater = GameObject.Find("DisplayUpdater").GetComponent<DisplayUpdater>();
     }
 
     public void CreateItem() //ABSTRACTION
@@ -34,6 +37,7 @@ public class ItemGenerator : MonoBehaviour
                 CreateRock();
                 break;
         }
+        displayUpdater.updateDisplay();
     }
 
     void CreateWater()
